@@ -18,7 +18,6 @@ function getLinkedinId(accessToken) {
     const headers = {
       Authorization: "Bearer " + accessToken,
       "cache-control": "no-cache",
-      "X-Restli-Protocol-Version": "2.0.0",
     };
     const body = "";
     _request(method, hostname, path, headers, body)
@@ -60,6 +59,7 @@ function postShare(
           },
         ],
         title,
+        "shareMediaCategory": "NONE"
       },
       distribution: {
         linkedInDistributionTarget: {},
@@ -68,7 +68,6 @@ function postShare(
     const headers = {
       Authorization: "Bearer " + accessToken,
       "cache-control": "no-cache",
-      "X-Restli-Protocol-Version": "2.0.0",
       "Content-Type": "application/json",
       "x-li-format": "json",
       "Content-Length": Buffer.byteLength(JSON.stringify(body)),
